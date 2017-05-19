@@ -6,6 +6,6 @@
 <h2>Login Berhasil</h2>
 <p>Selamat datang
 <?php echo $model->user ?><p>
-<p>[<a href="http://localhost/CI/index.php/Login/logout">Logout</a>]</p>
+<p>[<a href="http://localhost/ci/index.php/Login/logout">Logout</a>]</p>
 </body>
 </html>
