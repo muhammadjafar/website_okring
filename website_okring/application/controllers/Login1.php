@@ -14,8 +14,8 @@
 				$this->model->password=$_POST['txt_password'];
 				if($this->model->cek_log()==TRUE){
 					$this->session->set_userdata('user', $this->model->user);
-					$this->load->view('login_succes', ['model'=>$this->model]);
-					//redirect('crud');
+					//$this->load->view('login_succes', ['model'=>$this->model]);
+					redirect('Edit_profil');
 				}else{
 					redirect('Login1');
 				}

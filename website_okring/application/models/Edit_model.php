@@ -1,17 +1,18 @@
 <?php 
-	class Barang_model extends CI_Model{
+	class Edit_model extends CI_Model{
 	
-	public $id, $username, $password, $email, $stok;
-	public $label =[];
+	public $id, $username, $password, $email, $stok,$user, $alamat;
+	public $labels =[];
 	
 	public function __construct(){
 		parent::__construct();
 		$this->labels = $this->_attributeLabels();
 		$this->load->database();//fungsi untuk memuat database (libarary)
+		$this->load->library('session');
 	}
 		
 	public function insert() {
-		$sql = sprintf("INSERT INTO barang VALUES ('%s','%s','%f','%s','%d')",
+		$sql = sprintf("INSERT INTO user VALUES ('%s','%s','%f','%s','%d')",
 			$this->id,
 			$this->username,
 			$this->password,
@@ -20,7 +21,7 @@
 		$this->db->query($sql);
 	}
 	public function update() {
-		$sql = sprintf("UPDATE barang SET username='%s',password='%f',email='%s',stok='%d' WHERE id='%s'",
+		$sql = sprintf("UPDATE user SET username='%s',password='%f',email='%s',stok='%d' WHERE id='%s'",
 			$this->username,
 			$this->password,
 			$this->email,
@@ -29,12 +30,13 @@
 		$this->db->query($sql);
 	}
 	public function delete() {
-		$sql = sprintf("DELETE FROM barang WHERE id = '%s'", $this->id);
+		$sql = sprintf("DELETE FROM user WHERE id = '%s'", $this->id);
 		$this->db->query($sql);
 	}
 	
 	public function read() {
-		$sql = "SELECT * FROM barang ORDER BY id";
+		//$this->user=$this->session->set_userdata('user');
+		$sql =sprintf("SELECT * FROM user where username='%s'", $this->user=$this->session->set_userdata('user'));
 		$query = $this->db->query($sql);
 		return $query->result();
 	}
