@@ -25,6 +25,9 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url(); ?>tugas/images/apple-touch-icon-72.png">
         <link rel="apple-touch-icon-precomposed" href="<?php echo base_url(); ?>tugas/images/ico/apple-touch-icon-57.png">
         <link rel="shortcut icon" href="<?php echo base_url(); ?>tugas/images/logo.png">
+		<style>
+			#cari{margin-top:15px;margin-right:15px}
+		</style>
     </head>
     
     <body>
@@ -35,6 +38,7 @@
                         <img src="<?php echo base_url(); ?>tugas/images/logookring.png" width="50" height="50" alt="Logo" />
                         <!-- This is website logo -->
                     </a>
+					
                     <!-- Navigation button, visible on small resolution -->
                     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <i class="icon-menu"></i>
@@ -42,6 +46,12 @@
                     <!-- Main navigation -->
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
+							<li>
+							<form class="form-group has-feedback">
+							<input type="text" class="form-control" name="cari" id="cari" placeholder="cari catering">
+							<span class="fa fa-plus form-control-feedback"></span>
+							</form>
+							</li>
                             <li class="active"><a href="#home">Home</a></li>
                             <li><a href="#service">Services</a></li>
                             <li><a href="#portfolio">Portfolio</a></li>

@@ -1,7 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Welcome extends CI_Controller {
+class Beranda extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,8 +18,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		//$this->load->view('baru/isi');
-		//$this->load->view('baru/bawah');
-		redirect('beranda');
+		$this->load->view('baru/isi');
+		$this->load->view('baru/bawah');
 	}
 }
