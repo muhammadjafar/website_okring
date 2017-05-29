@@ -15,9 +15,9 @@ class registermodel extends CI_Model{
 	}
 	
 	public function insert() {
-	$sql = sprintf("INSERT INTO penjual(id_penjual, nama_catering, password_penjual, email_penjual, telp_penjual, alamat_penjual) 
-	VALUES (NULL,'%s','%s','%s','%s','%s')",
+	$sql = sprintf("INSERT INTO penjual(id_penjual, username_penjual, nama_catering, password_penjual, email_penjual, telp_penjual, alamat_penjual, foto_catering) VALUES (NULL, '%s', '%s', '%s', '%s', '%s', '%s', 'logo.png')",
 		$this->nama,
+		$this->username,
 		md5($this->pass),
 		$this->email,
 		$this->telp,
@@ -36,5 +36,4 @@ class registermodel extends CI_Model{
 		];
 	}
 }
-
 ?>
